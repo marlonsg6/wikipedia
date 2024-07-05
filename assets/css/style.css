@@ -1,4 +1,4 @@
-body, html {
+/* body, html {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -42,7 +42,7 @@ header{
 header .logo{
     width: 200px;
     border: none;
-    /* gap: 50px; */
+    gap: 50px;
 }
 
 .bar {
@@ -74,7 +74,7 @@ header .logo{
     border-right: solid 1px #cdcdcd;
 }
 .imagens figure img{
-    /* width: 300px; */
+    width: 300px;
     height: 200px;
 }
 
@@ -96,4 +96,148 @@ footer {
     display: flex;
     justify-content: center;
     gap: 1em;
+} */
+
+
+/* Estilo geral da página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+/* Cabeçalho */
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .logo{
+    width: 200px;
+    border: none;
+    gap: 50px;
+}
+
+/* Barra de pesquisa */
+.bar {
+    background-color: #f9f9fb;
+    padding: 15px;
+    border-top: solid 1px #cdcdcd;
+    border-bottom: solid 1px #cdcdcd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search {
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.search input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search button[type="submit"] {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Conteúdo principal */
+.content {
+    grid-template-areas:
+        "sidebar main anchors"
+        "sidebar main ."
+        /* Ajusta o layout para telas menores */
+        "sidebar main .";
+    grid-template-columns: minmax(0, 15rem) minmax(0, 2.5fr) minmax(0, 15rem);
+    padding: 1rem;
+    gap: 3rem;
+}
+
+.menu-navegacao {
+    grid-area: sidebar;
+    border-right: solid 1px #cdcdcd;
+    padding: 15px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.main {
+    grid-area: main;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ancoras {
+    order: 2;
+    grid-area: anchors;
+    border-left: solid 1px #cdcdcd;
+    padding: 15px;
+}
+
+/* Seção principal */
+.main h1,
+.main h2,
+.main h3 {
+    font-family: 'Abril Fatface', serif;
+    color: #1a1a1a;
+}
+
+.main p {
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+.main img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Galeria de imagens */
+#imagens {
+    margin-top: 20px;
+}
+
+#imagens h1 {
+    font-family: 'Abril Fatface', serif;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    list-style: none;
+}
+
+.menu-principal{
+    display: flex;
+}
+@media (max-width: 768px){
+    .content {
+        grid-template-areas:
+        "sidebar"
+        "anchors"
+        "main";
+        grid-template-columns: 1fr;
+    }   
 }
