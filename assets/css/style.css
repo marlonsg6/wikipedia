@@ -1,126 +1,25 @@
-/* body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-ul {
-    list-style: none; 
-    padding-left: 5px; 
-    margin-right: 20px;
-}
-li{
-    margin-bottom: 10px;
-}
-a { 
-    color:blue; 
-    text-decoration: none;
-}
-p{
-    text-align: justify;
-}
-span{
-    color: blue;
-}
-figure img{
-    width: 300px;
-}
-figure #imagem-maior{
-    width: 600px;
-    border: 1px solid #cdcdcd;
-}
-
-figure #trio-principal{
-    width: 500px;
-}
-
-header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-header .logo{
-    width: 200px;
-    border: none;
-    gap: 50px;
-}
-
-.bar {
-    background-color: #f9f9fb;
-    padding:15px;
-    border-top: solid 1px #cdcdcd;
-    border-bottom: solid 1px #cdcdcd;
-}
-.content {
-    max-width: 1440px;
-    margin: auto;
-    grid-gap: 3rem;
-    display: grid;
-    gap: 3rem;
-    grid-template-areas: "sidebar main anchors";
-    grid-template-columns: minmax(0,15rem) minmax(0,2.5fr) minmax(0,15rem);
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-.footer {
-    min-height: 100px;
-    border-top: solid 1px #cdcdcd;
-}
-.ancoras {
-    border-left: solid 1px #cdcdcd;
-    padding-left: 15px;
-}
-.menu-navegacao {
-    border-right: solid 1px #cdcdcd;
-}
-.imagens figure img{
-    width: 300px;
-    height: 200px;
-}
-
-footer {
-    display: flex;
-    border-top: 1px solid #cdcdcd;
-    justify-content: center;
-}
-
-.footer ul{
-    display: flex;
-    gap: 50px;
-    justify-content: center;
-    align-items: center;
-}
-
-.search{
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-} */
-
-
-/* Estilo geral da página */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f2f2f2;
+    width: 100%;
 }
 
-/* Cabeçalho */
-header{
+header {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-header .logo{
-    width: 200px;
-    border: none;
-    gap: 50px;
+header .logo {
+    width: 180px;
 }
 
-/* Barra de pesquisa */
+header h1 {
+    margin-left: 0;
+}
+
 .bar {
     background-color: #f9f9fb;
     padding: 15px;
@@ -142,7 +41,6 @@ header .logo{
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-right: 10px;
 }
 
 .search button[type="submit"] {
@@ -154,26 +52,39 @@ header .logo{
     cursor: pointer;
 }
 
-/* Conteúdo principal */
-.content {
-    grid-template-areas:
-        "sidebar main anchors"
-        "sidebar main ."
-        /* Ajusta o layout para telas menores */
-        "sidebar main .";
-    grid-template-columns: minmax(0, 15rem) minmax(0, 2.5fr) minmax(0, 15rem);
-    padding: 1rem;
-    gap: 3rem;
+a {
+    text-decoration: none;
+}
+
+.menu-principal {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .menu-navegacao {
-    grid-area: sidebar;
     border-right: solid 1px #cdcdcd;
     padding: 15px;
+    margin-right: 2em;
+    padding: 3em;
 }
 
-a{
-    text-decoration: none;
+.ancoras {
+    order: 2;
+    grid-area: anchors;
+    padding: 3em;
+}
+
+.menu-principal h2 {
+    margin: 1em;
+}
+
+.content {
+    margin: 3em;
+}
+
+.content p {
+    margin: 2em;
 }
 
 .main {
@@ -182,13 +93,6 @@ a{
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.ancoras {
-    order: 2;
-    grid-area: anchors;
-    border-left: solid 1px #cdcdcd;
-    padding: 15px;
 }
 
 /* Seção principal */
@@ -215,10 +119,36 @@ a{
     margin-top: 20px;
 }
 
-#imagens h1 {
+h1 {
+    margin-left: 1em;
     font-family: 'Abril Fatface', serif;
     color: #1a1a1a;
     margin-bottom: 10px;
+}
+
+#imagens figure {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+figure img {
+    width: 400px;
+}
+
+figure #imagem-maior {
+    width: 700px;
+    border: 1px solid #cdcdcd;
+}
+
+figure #trio-principal {
+    width: 400px;
+}
+
+#imagens img {
+    height: 200px;
+    width: 300px;
 }
 
 footer ul {
@@ -229,15 +159,32 @@ footer ul {
     list-style: none;
 }
 
-.menu-principal{
-    display: flex;
-}
-@media (max-width: 768px){
-    .content {
-        grid-template-areas:
-        "sidebar"
-        "anchors"
-        "main";
-        grid-template-columns: 1fr;
-    }   
+@media (max-width: 768px) {
+    header {
+        justify-content: flex-start;
+    }
+
+    .menu-principal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .menu-navegacao {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: none;
+    }
+
+    .ancoras{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
 }
