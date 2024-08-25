@@ -15,5 +15,6 @@
 
 ![alt text](assets/img/foto-mobile.png)
 ![alt text](assets/img/enredo.png)
+![alt text](assets/img/premios-honrarias.png)
 ![alt text](assets/img/images.png)
 
